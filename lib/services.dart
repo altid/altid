@@ -40,6 +40,7 @@ class _ServicesState extends State {
               ),
             );
           }
+          // Show spinner until done
           return Container(
             constraints: BoxConstraints(minWidth: 100, maxWidth: 300),
             padding: EdgeInsets.all(10),
