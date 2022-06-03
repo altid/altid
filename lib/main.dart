@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
-import 'services.dart' as services;
-import 'landing.dart' as landing;
+import 'package:provider/provider.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:altid/src/service.dart';
+import 'package:altid/views/buffers.dart' as buffers;
+import 'package:altid/views/service.dart' as services;
+import 'package:altid/views/settings.dart' as settings;
+import 'package:altid/views/landing.dart' as landing;
+import 'package:altid/views/about.dart' as about;
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => Services(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,21 +26,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        cupertinoOverrideTheme: const CupertinoThemeData(
+          textTheme: CupertinoTextThemeData(
+            dateTimePickerTextStyle: TextStyle(color: Colors.blue, fontSize: 16),
+            pickerTextStyle: TextStyle(color: Colors.blue, fontSize: 12),
+          ),
+        ),
+        primarySwatch: Colors.blueGrey,
       ),
       initialRoute: '/',
       routes: {
         '/': (context) => const landing.Welcome(),
-        '/services': (context) => const services.ServicesWidget(null),
+        '/service/buffer': (context) => const buffers.CreateWidget(),
+        '/service/create': (context) => const services.CreateWidget(),
+        '/settings': (context) => const settings.CreateWidget(),
+        '/about': (context) => const about.CreateWidget(),
       }
     );
   }
