@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:altid/src/service.dart';
 import 'package:altid/views/buffers.dart' as buffers;
 import 'package:altid/views/service.dart' as services;
@@ -25,14 +24,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        cupertinoOverrideTheme: const CupertinoThemeData(
-          textTheme: CupertinoTextThemeData(
-            dateTimePickerTextStyle: TextStyle(color: Colors.blue, fontSize: 16),
-            pickerTextStyle: TextStyle(color: Colors.blue, fontSize: 12),
-          ),
+      darkTheme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          foregroundColor: Colors.white,
         ),
         primarySwatch: Colors.blueGrey,
+        brightness: Brightness.dark,
+      ),
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          foregroundColor: Colors.black,
+        ),
+        primarySwatch: Colors.blueGrey,
+        brightness: Brightness.light,
       ),
       initialRoute: '/',
       routes: {

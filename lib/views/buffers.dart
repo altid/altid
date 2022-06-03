@@ -14,6 +14,7 @@ class CreateWidget extends StatelessWidget {
     TextEditingController _inputController = TextEditingController();
 
     return Scaffold(
+      
       drawer: menu.build(),
       appBar: AppBar(
         title: Text(buffer.name),

@@ -9,9 +9,9 @@ class CreateWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add a Service'),
+        title: const Text('Add a Service'),
       ),
-      body: AddServiceWidget(),
+      body: const AddServiceWidget(),
     );
   }
 }

@@ -24,7 +24,6 @@ class _MyHomePageState extends State<Welcome> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Services"),
-        centerTitle: true,
         actions: [
           PopupMenuButton<int>(
             onSelected: (item) => menuSelected(context, item),
@@ -43,7 +42,7 @@ class _MyHomePageState extends State<Welcome> {
       ),
       extendBodyBehindAppBar: true,
       drawer: menu.build(),
-      body: Center(child: Text("hi")),
+      body: const Center(child: Text("hi")),
     );
   }
 }
