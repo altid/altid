@@ -6,8 +6,6 @@ import 'package:multicast_dns/multicast_dns.dart';
 class Service {
   final String address;
   final String service;
-  String username = '';
-  String password = '';
   String status = '';
   List<Buffer> buffers = [];
 
@@ -15,6 +13,10 @@ class Service {
     this.address,
     this.service,
   );
+
+  void write(String line) {
+    print(line);
+  }
 }
 
 class Services extends ChangeNotifier {

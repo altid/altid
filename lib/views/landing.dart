@@ -42,7 +42,7 @@ class _MyHomePageState extends State<Welcome> {
       ),
       extendBodyBehindAppBar: true,
       drawer: menu.build(),
-      body: const Center(child: Text("hi")),
+      body: const Center(child: Text("Welcome! Select a Service from the menu to continue")),
     );
   }
 }

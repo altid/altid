@@ -23,5 +23,6 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 
   void Write(String value) {
     main += value + '\n';
+    
   }
 }
